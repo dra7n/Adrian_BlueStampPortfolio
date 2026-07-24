@@ -43,15 +43,14 @@ For your second milestone, explain what you've worked on since your previous mil
 
 # First Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZX0E4HqxcDc?si=fk7Na8wRHeSnDecw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-For your first milestone, describe what your project is and how you plan to build it. You can include:
-- An explanation about the different components of your project and how they will all integrate together
-- Technical progress you've made so far
-- Challenges you're facing and solving in your future milestones
-- What your plan is to complete your project
+
+
+For my first milestone, I created an audio visualizer using an Arduino Uno R3, a microphone sensor, and a 32×8 LED dot matrix display. The microphone detects sound and sends an analog signal to the Arduino, which processes the audio using a Fast Fourier Transform and displays the results as moving frequency bars on the LED matrix.
+
+So far, I have completed the wiring, tested each component, and programmed the display to react to music. One challenge has been improving the microphone’s sensitivity and making the visualizer respond accurately to quieter sounds. My next steps are to refine the code, improve the audio input, organize the wiring, and build an enclosure for the finished project.
 
 # Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
@@ -76,7 +75,7 @@ void loop() {
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
-| Arduino Uno R3 | Processes the microphone signal and controls the display | $27.60 | [Link](https://www.amazon.com/dp/B0FKN4T68T/) |
+| Arduino Uno R3 | Processes the microphone signal and controls the display | $9.98 | [Link](https://www.amazon.com/dp/B0FKN4T68T/) |
 | Microphone Sensor Module | Detects sound and sends an analog signal to the Arduino | $6.59 for 3 | [Link](https://www.amazon.com/dp/B0F2GBMDT8) |
 | 32x8 LED Dot Matrix Display | Displays the audio spectrum as LED bars | $8.99 | [Link](https://www.amazon.com/dp/B07W1WCXXS/) |
 
