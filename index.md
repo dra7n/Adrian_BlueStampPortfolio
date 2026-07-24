@@ -50,7 +50,7 @@ For your second milestone, explain what you've worked on since your previous mil
 
 For my first milestone, I created an audio visualizer using an Arduino Uno R3, a microphone sensor, and a 32×8 LED dot matrix display. The microphone detects sound and sends an analog signal to the Arduino, which processes the audio using a Fast Fourier Transform and displays the results as moving frequency bars on the LED matrix.
 
-So far, I have completed the wiring, tested each component, and programmed the display to react to music. One challenge has been improving the microphone’s sensitivity and making the visualizer respond accurately to quieter sounds. My next steps are to refine the code, improve the audio input, organize the wiring, and build an enclosure for the finished project.
+So far, I have completed the wiring, tested each component, and programmed the display to react to music. One challenge has been improving the microphone’s sensitivity and making the visualizer respond accurately to quieter sounds. My next steps are to refine the code, improve the audio input, organize the wiring, and build an enclosure for the finished project. In order to organize the wiring and improve the audio input, I plan on adding a case and an upgraded sound sensor.
 
 # Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
@@ -177,8 +177,6 @@ void loop() {
 
 # Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
-- [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
-- [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
+- [Resource 1](https://circuitdigest.com/microcontroller-projects/diy-music-audio-visualizer-using-dot-matrix-display-and-arduino-nano)
+- [Resource 2](https://www.youtube.com/watch?v=pHw3AokxRXM)
 - [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
-
-To watch the BSE tutorial on how to create a portfolio, click here.
