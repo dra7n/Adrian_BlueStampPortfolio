@@ -171,8 +171,9 @@ void loop() {
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
 | Arduino Uno R3 | Processes the microphone signal and controls the display | $9.98 | [Link](https://www.amazon.com/dp/B0FKN4T68T/) |
-| Microphone Sensor Module | Detects sound and sends an analog signal to the Arduino | $6.59 for 3 | [Link](https://www.amazon.com/dp/B0F2GBMDT8) |
+| MAX4466 Microphone Amplifier w/ Adjustable Gain | Amplifies sound and sends a stronger, adjustable analog audio signal to the Arduino | $8.39 for 2 | [Link](https://www.amazon.com/dp/B07DRGF8C2/) |
 | 32x8 LED Dot Matrix Display | Displays the audio spectrum as LED bars | $8.99 | [Link](https://www.amazon.com/dp/B07W1WCXXS/) |
+| Case for Audio Visualizer | Case to hold all components together | Needs to be 3d printed | [Link](https://www.thingiverse.com/thing:4976485) |
 
 
 # Other Resources/Examples
