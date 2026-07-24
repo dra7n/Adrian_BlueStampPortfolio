@@ -59,15 +59,110 @@ Here's where you'll put images of your schematics. [Tinkercad](https://www.tinke
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
 ```c++
+#include <arduinoFFT.h>
+#include <MD_MAX72xx.h>
+#include <SPI.h>
+
+const uint8_t CS_PIN = 10;
+const uint8_t MAX_DEVICES = 4;
+
+MD_MAX72XX disp(
+  MD_MAX72XX::FC16_HW,
+  CS_PIN,
+  MAX_DEVICES
+);
+
+const uint8_t SOUND_PIN = A0;
+
+const uint16_t SAMPLES = 64;
+
+const double SAMPLING_FREQUENCY = 4000.0;
+
+const unsigned long SAMPLING_PERIOD_US = 250;
+
+const int MAGNITUDE_MAX = 520;
+
+double realComponent[SAMPLES];
+double imagComponent[SAMPLES];
+
+ArduinoFFT<double> FFT = ArduinoFFT<double>(
+  realComponent,
+  imagComponent,
+  SAMPLES,
+  SAMPLING_FREQUENCY
+);
+
+const uint8_t spectralHeight[9] = {
+  0b00000000,
+  0b10000000,
+  0b11000000,
+  0b11100000,
+  0b11110000,
+  0b11111000,
+  0b11111100,
+  0b11111110,
+  0b11111111
+};
+
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(9600);
-  Serial.println("Hello World!");
+
+  disp.begin();
+  disp.control(MD_MAX72XX::INTENSITY, 3);
+  disp.clear();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  for (uint16_t i = 0; i < SAMPLES; i++) {
+    unsigned long sampleStart = micros();
 
+    realComponent[i] = analogRead(SOUND_PIN);
+    imagComponent[i] = 0.0;
+
+    while (micros() - sampleStart < SAMPLING_PERIOD_US) {
+    }
+  }
+
+  FFT.dcRemoval();
+
+  FFT.windowing(
+    FFTWindow::Hamming,
+    FFTDirection::Forward
+  );
+
+  FFT.compute(FFTDirection::Forward);
+  FFT.complexToMagnitude();
+
+  for (uint8_t i = 0; i < 32; i++) {
+    uint8_t level = 0;
+
+    if (i > 0) {
+      int magnitude = (int)realComponent[i];
+
+      magnitude = constrain(
+        magnitude,
+        0,
+        MAGNITUDE_MAX
+      );
+
+      level = map(
+        magnitude,
+        0,
+        MAGNITUDE_MAX,
+        0,
+        8
+      );
+    }
+
+    uint8_t column = 31 - i;
+
+    disp.setColumn(
+      column,
+      spectralHeight[level]
+    );
+  }
+
+  Serial.println((int)realComponent[1]);
 }
 ```
 
