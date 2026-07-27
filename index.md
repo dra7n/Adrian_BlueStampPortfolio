@@ -54,7 +54,12 @@ So far, I have completed the wiring, tested each component, and programmed the d
 
 # Schematic 
 
-![Wiring schematic for the Arduino audio visualizer](audio-visualizer-schematic.png)
+<p align="center">
+  <img
+    src="audio-visualizer-schematic.png"
+    alt="Wokwi circuit diagram for the audio visualizer"
+    width="650">
+</p>
 
 # Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
