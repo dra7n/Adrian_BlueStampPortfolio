@@ -54,7 +54,7 @@ So far, I have completed the wiring, tested each component, and programmed the d
 
 # Schematics 
 
-![Wiring diagram for the Arduino audio visualizer](images/audio-visualizer-circuit.png)
+![Wiring schematic for the Arduino audio visualizer](images/audio-visualizer-schematic.png)
 
 # Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
