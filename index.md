@@ -187,4 +187,4 @@ void loop() {
 
 - [Resource 1](https://circuitdigest.com/microcontroller-projects/diy-music-audio-visualizer-using-dot-matrix-display-and-arduino-nano)
 - [Resource 2](https://www.youtube.com/watch?v=pHw3AokxRXM)
-- [Resource 3](https://wokwi.com))
+- [Resource 3](https://wokwi.com)
