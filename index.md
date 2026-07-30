@@ -196,6 +196,7 @@ if (digitalRead(ENC_SW) == LOW) {
 | 32x8 LED Dot Matrix Display | Displays the audio spectrum as LED bars | $8.99 | [Link](https://www.amazon.com/dp/B07W1WCXXS) |
 | Case for Audio Visualizer | Case to hold all components together | Needs to be 3d printed | [Link](https://www.thingiverse.com/thing:4976485) |
 | KY-040 Rotary Encoder | Used as a threshold for microphone sensitivity | $8.99 for 2 | [Link](https://www.amazon.com/dp/B07YFPV5N4/) |
+| I2C 1602 Display Module | Used to display value that is changed by the Rotary Encoder | $9.99 for 2 | [Link](https://www.amazon.com//dp/B07S7PJYM6)
 
 
 # Resources
