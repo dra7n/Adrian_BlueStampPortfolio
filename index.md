@@ -198,7 +198,7 @@ if (digitalRead(ENC_SW) == LOW) {
 | KY-040 Rotary Encoder | Used as a threshold for microphone sensitivity | $8.99 for 2 | [Link](https://www.amazon.com/dp/B07YFPV5N4/) |
 
 
-# Other Resources/Examples
+# Resources
 
 - [Resource 1](https://circuitdigest.com/microcontroller-projects/diy-music-audio-visualizer-using-dot-matrix-display-and-arduino-nano)
 - [Resource 2](https://www.youtube.com/watch?v=pHw3AokxRXM)
