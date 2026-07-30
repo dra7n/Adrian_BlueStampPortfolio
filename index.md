@@ -68,6 +68,7 @@ Here's where you'll put your code. The syntax below places it into a block of co
 #include <arduinoFFT.h>
 #include <MD_MAX72xx.h>
 #include <SPI.h>
+#include <Encoder.h>
 
 const uint8_t CS_PIN = 10;
 const uint8_t MAX_DEVICES = 4;
@@ -86,7 +87,12 @@ const double SAMPLING_FREQUENCY = 4000.0;
 
 const unsigned long SAMPLING_PERIOD_US = 250;
 
-const int MAGNITUDE_MAX = 520;
+const uint8_t ENC_SW = 4;
+
+Encoder knob(2, 3);
+
+int magnitudeMax = 520;
+long previousEncoderPosition = 0;
 
 double realComponent[SAMPLES];
 double imagComponent[SAMPLES];
@@ -113,12 +119,35 @@ const uint8_t spectralHeight[9] = {
 void setup() {
   Serial.begin(9600);
 
+  pinMode(ENC_SW, INPUT_PULLUP);
   disp.begin();
   disp.control(MD_MAX72XX::INTENSITY, 3);
   disp.clear();
 }
 
 void loop() {
+
+long encoderPosition = knob.read() / 4;
+
+if (encoderPosition != previousEncoderPosition) {
+  int change = encoderPosition - previousEncoderPosition;
+
+  magnitudeMax += change * 20;
+  magnitudeMax = constrain(magnitudeMax, 80, 1200);
+
+  previousEncoderPosition = encoderPosition;
+
+  Serial.print("Sensitivity value: ");
+  Serial.println(magnitudeMax);
+}
+
+if (digitalRead(ENC_SW) == LOW) {
+  magnitudeMax = 520;
+  knob.write(0);
+  previousEncoderPosition = 0;
+  delay(150);
+}
+
   for (uint16_t i = 0; i < SAMPLES; i++) {
     unsigned long sampleStart = micros();
 
@@ -148,13 +177,13 @@ void loop() {
       magnitude = constrain(
         magnitude,
         0,
-        MAGNITUDE_MAX
+        magnitudeMax
       );
 
       level = map(
         magnitude,
         0,
-        MAGNITUDE_MAX,
+        magnitudeMax,
         0,
         8
       );
