@@ -197,6 +197,7 @@ if (digitalRead(ENC_SW) == LOW) {
 | KY-040 Rotary Encoder | Used as a threshold for microphone sensitivity | $8.99 for 2 | [Link](https://www.amazon.com/dp/B07YFPV5N4/) |
 | I2C 1602 Display Module | Used to display value that is changed by the Rotary Encoder | $9.99 for 2 | [Link](https://www.amazon.com//dp/B07S7PJYM6)
 | Wires | Used to connect components | $5.99 for 120 | [Link](https://www.amazon.com/dp/B0B2L66ZFM)
+| Breadboard | Used for power rails, 5v rail and ground rail | $6.48 for 2 medium and 2 full | [link](https://www.amazon.com/dp/B07DL13RZH)
 
 
 # Resources
