@@ -42,7 +42,7 @@ So far, I have completed the wiring, tested each component, and programmed the d
 
 <p align="center">
   <img
-    src="audiovisualizerschematic.png"
+    src="audiovisualizerschematic2.png"
     alt="Wokwi circuit diagram for the audio visualizer"
     width="650">
 </p>
