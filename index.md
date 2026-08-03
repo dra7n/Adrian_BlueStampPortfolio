@@ -11,7 +11,12 @@ You should comment out all portions of your portfolio that you have not complete
 |:--:|:--:|:--:|:--:|
 | Adrian F | Terra Linda High School | Mechanical Engineering | Incoming Senior
 
-![Headstone Image](meandproject.png)
+<p align="center">
+  <img
+    src="meandproject.png"
+    alt="Wokwi circuit diagram for the audio visualizer"
+    width="650">
+</p>
   
 # Final Milestone
 
