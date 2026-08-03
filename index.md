@@ -187,6 +187,6 @@ void loop() {
 
 # Resources
 
-- [Resource 1](https://circuitdigest.com/microcontroller-projects/diy-music-audio-visualizer-using-dot-matrix-display-and-arduino-nano)
-- [Resource 2](https://www.youtube.com/watch?v=pHw3AokxRXM)
-- [Resource 3](https://wokwi.com)
+- [DIY Music/Audio Visualizer Base Project](https://circuitdigest.com/microcontroller-projects/diy-music-audio-visualizer-using-dot-matrix-display-and-arduino-nano)
+- [Youtube video for info on LED Matrix](https://www.youtube.com/watch?v=pHw3AokxRXM)
+- [Where I created my schematic](https://wokwi.com)
