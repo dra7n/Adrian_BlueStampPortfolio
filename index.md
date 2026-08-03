@@ -3,7 +3,7 @@ This project is an Arduino powered audio visualizer that transforms live sound i
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
-| Adrian F | Terra Linda High School | Mechanical Engineering | Incoming Senior
+| Adrian F | Terra Linda High School | Mechanical Engineering | Incoming Senior |
 
 <p align="center">
   <img
