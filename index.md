@@ -1,12 +1,6 @@
 # Audio Spectrum Visualizer
 This project is an Arduino powered audio visualizer that transforms live sound into moving patterns on a 32×8 LED matrix display. By combining a microphone sensor, real-time signal processing, and an animated display, it turns music and other sounds into a visual experience
 
-You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
-```HTML 
-<!--- This is an HTML comment in Markdown -->
-<!--- Anything between these symbols will not render on the published site -->
-```
-
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
 | Adrian F | Terra Linda High School | Mechanical Engineering | Incoming Senior
