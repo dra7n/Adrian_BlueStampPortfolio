@@ -178,11 +178,11 @@ void loop() {
 | Arduino Uno R3 | Processes the microphone signal and controls the display | $9.98 | [Link](https://www.amazon.com/dp/B0FKN4T68T) |
 | KY-037 Sound Sensor Module | Can capture and transmit analog audio signals to the Arduino | $6.59 for 4 | [Link](https://www.amazon.com/dp/B0DNDV4M57) |
 | 32x8 LED Dot Matrix Display | Displays the audio spectrum as LED bars | $8.99 | [Link](https://www.amazon.com/dp/B07W1WCXXS) |
-| Case for Audio Visualizer | Case to hold all components together | Needs to be 3d printed | [Link](https://www.thingiverse.com/thing:4976485) |
-| KY-040 Rotary Encoder | Used as a threshold for microphone sensitivity | $8.99 for 2 | [Link](https://www.amazon.com/dp/B07YFPV5N4/) |
-| I2C 1602 Display Module | Used to display value that is changed by the Rotary Encoder | $9.99 for 2 | [Link](https://www.amazon.com//dp/B07S7PJYM6)
-| Wires | Used to connect components | $5.99 for 120 | [Link](https://www.amazon.com/dp/B0B2L66ZFM)
-| Breadboard | Used for power rails, 5v rail and ground rail | $6.48 for 2 medium and 2 full | [link](https://www.amazon.com/dp/B07DL13RZH)
+| Case for Audio Visualizer | Case to hold all components together (not used) | Needs to be 3d printed | [Link](https://www.thingiverse.com/thing:4976485) |
+| KY-040 Rotary Encoder | Used as a threshold for microphone sensitivity | $8.99 for 2 | [Link](https://www.amazon.com/dp/B07YFPV5N4) |
+| I2C 1602 Display Module | Used to display value that is changed by the Rotary Encoder | $9.99 for 2 | [Link](https://www.amazon.com//dp/B07S7PJYM6) |
+| Wires | Used to connect components | $5.99 for 120 | [Link](https://www.amazon.com/dp/B0B2L66ZFM) |
+| Breadboard | Used for power rails, 5v rail and ground rail | $6.48 for 2 medium and 2 full | [link](https://www.amazon.com/dp/B07DL13RZH) |
 
 
 # Resources
