@@ -49,8 +49,25 @@ So far, I have completed the wiring, tested each component, and programmed the d
 
 # Code
 
-```c++
-#include <arduinoFFT.h>
+<div style="
+  height: 350px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #1e1e1e;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+">
+  <pre style="
+    margin: 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    font-family: Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+  "><code>
+    #include <arduinoFFT.h>
 #include <MD_MAX72xx.h>
 #include <SPI.h>
 #include <Encoder.h>
@@ -171,7 +188,8 @@ void loop() {
     disp.setColumn(31 - i, spectralHeight[level]);
   }
 }
-```
+  </code></pre>
+</div>
 
 # Materials
 
