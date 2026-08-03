@@ -54,27 +54,22 @@ So far, I have completed the wiring, tested each component, and programmed the d
 #include <MD_MAX72xx.h>
 #include <SPI.h>
 #include <Encoder.h>
+#include <Wire.h>
+#include <hd44780.h>
+#include <hd44780ioClass/hd44780_I2Cexp.h>
 
 const uint8_t CS_PIN = 10;
 const uint8_t MAX_DEVICES = 4;
-
-MD_MAX72XX disp(
-  MD_MAX72XX::FC16_HW,
-  CS_PIN,
-  MAX_DEVICES
-);
-
 const uint8_t SOUND_PIN = A0;
-
-const uint16_t SAMPLES = 64;
-
-const double SAMPLING_FREQUENCY = 4000.0;
-
-const unsigned long SAMPLING_PERIOD_US = 250;
-
 const uint8_t ENC_SW = 4;
 
+const uint16_t SAMPLES = 64;
+const double SAMPLING_FREQUENCY = 4000.0;
+const unsigned long SAMPLING_PERIOD_US = 250;
+
+MD_MAX72XX disp(MD_MAX72XX::FC16_HW, CS_PIN, MAX_DEVICES);
 Encoder knob(2, 3);
+hd44780_I2Cexp lcd;
 
 int magnitudeMax = 520;
 long previousEncoderPosition = 0;
@@ -82,7 +77,7 @@ long previousEncoderPosition = 0;
 double realComponent[SAMPLES];
 double imagComponent[SAMPLES];
 
-ArduinoFFT<double> FFT = ArduinoFFT<double>(
+ArduinoFFT<double> FFT(
   realComponent,
   imagComponent,
   SAMPLES,
@@ -101,55 +96,62 @@ const uint8_t spectralHeight[9] = {
   0b11111111
 };
 
+void updateLCD() {
+  lcd.setCursor(0, 1);
+  lcd.print("Sensitivity:    ");
+  lcd.setCursor(12, 1);
+  lcd.print(magnitudeMax);
+}
+
 void setup() {
   Serial.begin(9600);
-
   pinMode(ENC_SW, INPUT_PULLUP);
+
   disp.begin();
   disp.control(MD_MAX72XX::INTENSITY, 3);
   disp.clear();
+
+  lcd.begin(16, 2);
+  lcd.print("Audio Visualizer");
+  updateLCD();
 }
 
 void loop() {
+  long encoderPosition = knob.read() / 4;
 
-long encoderPosition = knob.read() / 4;
+  if (encoderPosition != previousEncoderPosition) {
+    int change = encoderPosition - previousEncoderPosition;
 
-if (encoderPosition != previousEncoderPosition) {
-  int change = encoderPosition - previousEncoderPosition;
+    magnitudeMax += change * 20;
+    magnitudeMax = constrain(magnitudeMax, 80, 1200);
+    previousEncoderPosition = encoderPosition;
 
-  magnitudeMax += change * 20;
-  magnitudeMax = constrain(magnitudeMax, 80, 1200);
+    updateLCD();
 
-  previousEncoderPosition = encoderPosition;
+    Serial.print("Sensitivity: ");
+    Serial.println(magnitudeMax);
+  }
 
-  Serial.print("Sensitivity value: ");
-  Serial.println(magnitudeMax);
-}
-
-if (digitalRead(ENC_SW) == LOW) {
-  magnitudeMax = 520;
-  knob.write(0);
-  previousEncoderPosition = 0;
-  delay(150);
-}
+  if (digitalRead(ENC_SW) == LOW) {
+    magnitudeMax = 520;
+    knob.write(0);
+    previousEncoderPosition = 0;
+    updateLCD();
+    delay(150);
+  }
 
   for (uint16_t i = 0; i < SAMPLES; i++) {
     unsigned long sampleStart = micros();
 
     realComponent[i] = analogRead(SOUND_PIN);
-    imagComponent[i] = 0.0;
+    imagComponent[i] = 0;
 
     while (micros() - sampleStart < SAMPLING_PERIOD_US) {
     }
   }
 
   FFT.dcRemoval();
-
-  FFT.windowing(
-    FFTWindow::Hamming,
-    FFTDirection::Forward
-  );
-
+  FFT.windowing(FFTWindow::Hamming, FFTDirection::Forward);
   FFT.compute(FFTDirection::Forward);
   FFT.complexToMagnitude();
 
@@ -157,32 +159,17 @@ if (digitalRead(ENC_SW) == LOW) {
     uint8_t level = 0;
 
     if (i > 0) {
-      int magnitude = (int)realComponent[i];
-
-      magnitude = constrain(
-        magnitude,
+      int magnitude = constrain(
+        (int)realComponent[i],
         0,
         magnitudeMax
       );
 
-      level = map(
-        magnitude,
-        0,
-        magnitudeMax,
-        0,
-        8
-      );
+      level = map(magnitude, 0, magnitudeMax, 0, 8);
     }
 
-    uint8_t column = 31 - i;
-
-    disp.setColumn(
-      column,
-      spectralHeight[level]
-    );
+    disp.setColumn(31 - i, spectralHeight[level]);
   }
-
-  Serial.println((int)realComponent[1]);
 }
 ```
 
