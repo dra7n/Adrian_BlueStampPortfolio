@@ -67,7 +67,7 @@ So far, I have completed the wiring, tested each component, and programmed the d
     font-size: 14px;
     line-height: 1.5;
   "><code>
-    #include <arduinoFFT.h>
+#include <arduinoFFT.h>
 #include <MD_MAX72xx.h>
 #include <SPI.h>
 #include <Encoder.h>
@@ -190,6 +190,7 @@ void loop() {
 }
   </code></pre>
 </div>
+
 
 # Materials
 
