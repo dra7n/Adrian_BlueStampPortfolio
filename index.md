@@ -16,11 +16,11 @@ This project is an Arduino powered audio visualizer that transforms live sound i
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
+Since my previous milestone, I completed the final version of my Arduino audio visualizer. I added a rotary encoder that allows the user to adjust the display’s sensitivity while the project is running, along with a 16-by-2 I²C LCD that shows the current sensitivity value. I also reorganized the wiring, updated the code so all of the components could operate together, and created a final enclosure to hold the Arduino, breadboard, microphone, LED matrix, encoder, and LCD. 
+
+One of my biggest challenges was creating an enclosure that could fit the completed project. I originally found a 3D printed case that seemed like it would work, but it ended up being too small after I added the LCD, rotary encoder, and additional wiring. To solve this problem, I measured each component and built a custom cardboard enclosure that securely holds the entire system.
+
+In the future, I hope to learn more about digital signal processing and ways to improve the accuracy and responsiveness of audio systems. I would also like to gain experience with soldering, designing printed circuit boards, and creating custom 3D-modeled enclosures. These skills could help me turn projects like this from breadboard prototypes into smaller, more durable, and professional-looking devices.
 
 
 # First Milestone
