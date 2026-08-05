@@ -14,7 +14,7 @@ This project is an Arduino powered audio visualizer that transforms live sound i
   
 # Final Milestone
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hnoGbtCdNS8?si=8vNtN_LLD95fmYcj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Since my previous milestone, I completed the final version of my Arduino audio visualizer. I added a rotary encoder that allows the user to adjust the display’s sensitivity while the project is running, along with a 16-by-2 I²C LCD that shows the current sensitivity value. I also reorganized the wiring, updated the code so all of the components could operate together, and created a final enclosure to hold the Arduino, breadboard, microphone, LED matrix, encoder, and LCD. 
 
